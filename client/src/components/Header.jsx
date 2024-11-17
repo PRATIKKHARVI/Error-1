@@ -7,8 +7,8 @@ function Header() {
         <div className='flex justify-between items-center max-w-6xl mx-auto p-4'>
         <Link to='/'>
         <h1 className='font-bold text-lg sm:text-2xl flex flex-wrap'>
-            <span className='prp-highlight'>BobThe</span>
-            <span className='text-white'> Builder</span>
+            <span className='prp-highlight'>TradeX</span>
+            <span className='text-white'> Camp</span>
         </h1>
         </Link>
         <form className='bg-gray-800 p-3 rounded-lg flex items-center'>

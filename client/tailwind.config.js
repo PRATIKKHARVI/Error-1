@@ -6,6 +6,8 @@ export default {
     extend: {
       colors: {
         gold: '#FFD700',
+        burgundy: '#B22222',
+        'burgundy-dark': '#8B0000',
       }
     },
   },

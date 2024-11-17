@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice.js';
+import OAuth from '../components/OAuth.jsx'
 
 export default function SignIn() {
   const [formData,setFormData]=useState({})
@@ -38,6 +39,7 @@ export default function SignIn() {
     dispatch(signInSuccess(data));
     navigate('/');
     } catch(error) {
+      console.log(error);
       dispatch(signInFailure(error.message));
     }
   };
@@ -59,6 +61,7 @@ export default function SignIn() {
         disabled:text-gray-400 disabled:cursor-not-allowed'>
           {loading ? 'Loading...' : 'Sign In'}
         </button>
+        <OAuth/>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
@@ -66,7 +69,7 @@ export default function SignIn() {
           <span className='text-gold hover:underline'>Sign up</span>
         </Link>
       </div>
-    {error && <p className='text-red-500 mt-5'>{error}</p>}
+    {error && <p className='text-red-500 mt-5'>{typeof error === 'string' ? error : error.message}</p>}
     </div>
   )
 }

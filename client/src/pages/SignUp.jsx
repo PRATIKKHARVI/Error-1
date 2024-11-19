@@ -12,8 +12,6 @@ export default function SignUp() {
         [e.target.id]:e.target.value,
     });
   };
-
-  console.log(formData)
   const handleSubmit = async (e)=> {
     e.preventDefault();
     try {
@@ -49,10 +47,10 @@ export default function SignUp() {
         <input type="text" placeholder='username'
         className='border p-3 rounded-lg text-black' id='username' 
         onChange={handleChange}/>
-        <input type="text" placeholder='email'
+        <input type="email" placeholder='email'
         className='border p-3 rounded-lg text-black' id='email' 
         onChange={handleChange}/>
-        <input type="text" placeholder='password'
+        <input type="password" placeholder='password'
         className='border p-3 rounded-lg text-black' id='password' 
         onChange={handleChange}/>
         <button disabled={loading} className='bg-black text-gold p-3 rounded-lg uppercase tracking-wider 
@@ -70,5 +68,5 @@ export default function SignUp() {
       </div>
     {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
-  )
+  );
 }

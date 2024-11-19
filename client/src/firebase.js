@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "campus-market-1f645",
   storageBucket: "campus-market-1f645.firebasestorage.app",
   messagingSenderId: "32392551435",
-  appId: "1:32392551435:web:6bb38f8fd89f9d1d8a7b0e"
+  appId: "1:32392551435:web:b8199e26fe4596d48a7b0e"
 };
 
 // Initialize Firebase

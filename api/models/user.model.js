@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    avatar: {
+        type: String,
+        default: "https://thumbs.dreamstime.com/b/student-icon-vector-male-person-profile-graduation-avatar-mortar-board-student-icon-vector-graduation-mortar-board-108392243.jpg"
+    },
 },{timestamps:true});
 
 const User=mongoose.model('User',userSchema);

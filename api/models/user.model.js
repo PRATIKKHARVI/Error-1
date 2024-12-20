@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -17,7 +18,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        default: "https://thumbs.dreamstime.com/b/student-icon-vector-male-person-profile-graduation-avatar-mortar-board-student-icon-vector-graduation-mortar-board-108392243.jpg"
+        default: "https://www.svgrepo.com/show/13656/user.svg",
     },
 },{timestamps:true});
 

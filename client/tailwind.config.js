@@ -7,10 +7,12 @@ export default {
       colors: {
         gold: '#FFD700',
         burgundy: '#B22222',
-        'burgundy-dark': '#8B0000',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ...
+  ],
 }
 

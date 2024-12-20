@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice.js';
@@ -11,7 +11,6 @@ export default function SignIn() {
   //const [loading, setLoading]=useState(false);
   const navigate=useNavigate();
   const dispatch=useDispatch();
-  const [showError,setShowError] = useState(false);
 
   const handleChange=(e)=> {
     setFormData({
@@ -36,28 +35,15 @@ export default function SignIn() {
     const data=await res.json();
     if(data.success===false) {
       dispatch(signInFailure(data.message));
-      setShowError(true);
       return;
     }
     dispatch(signInSuccess(data));
     navigate('/');
     } catch(error) {
-      console.log(error);
       dispatch(signInFailure(error.message));
-      setShowError(true);
     }
   };
   
-  useEffect(()=> {
-    if(error) {
-      setShowError(true);
-      const timer=setTimeout(()=> {
-        setShowError(false);
-        dispatch(signInFailure(null));
-      },5000);
-      return ()=> clearTimeout(timer);
-    }
-  },[error,dispatch]);
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center text-gold font-semibold 
@@ -79,11 +65,11 @@ export default function SignIn() {
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
-        <Link to={"/sign-up"}>
+        <Link to={'/sign-up'}>
           <span className='text-gold hover:underline'>Sign up</span>
         </Link>
       </div>
-    {showError && <p className='text-red-500 mt-5'>{error}</p>}
+    {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
   );
 }
